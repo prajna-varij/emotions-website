@@ -1,0 +1,181 @@
+{% extends 'homeapp/Mainhome.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.bg-blue-500{
+  --tw-bg-opacity: 1;
+  background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
+}
+
+.border-gray-600{
+  --tw-border-opacity: 1;
+  border-color: rgba(75, 85, 99, var(--tw-border-opacity));
+}
+
+.border-gray-900{
+  --tw-border-opacity: 1;
+  border-color: rgba(17, 24, 39, var(--tw-border-opacity));
+}
+
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.flex{
+  display: flex;
+}
+
+.items-center{
+  align-items: center;
+}
+
+.justify-end{
+  justify-content: flex-end;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.justify-between{
+  justify-content: space-between;
+}
+
+.flex-shrink-0{
+  flex-shrink: 0;
+}
+
+.font-primary{
+  font-family: Open Sans;
+}
+
+.font-medium{
+  font-weight: 500;
+}
+
+.font-semibold{
+  font-weight: 600;
+}
+
+.h-40{
+  height: 10rem;
+}
+
+.h-full{
+  height: 100%;
+}
+
+.h-screen{
+  height: 100vh;
+}
+
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.m-4{
+  margin: 1rem;
+}
+
+.min-h-screen{
+  min-height: 100vh;
+}
+
+.outline-none{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.p-8{
+  padding: 2rem;
+}
+
+.py-8{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.py-10{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.pb-8{
+  padding-bottom: 2rem;
+}
+
+.relative{
+  position: relative;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.text-gray-200{
+  --tw-text-opacity: 1;
+  color: rgba(229, 231, 235, var(--tw-text-opacity));
+}
+
+.w-40{
+  width: 10rem;
+}
+
+.w-10\/12{
+  width: 83.333333%;
+}
+
+.w-full{
+  width: 100%;
+}
+
+.min-w-full{
+  min-width: 100%;
+}
+
+</style>
+
+
+<section class='bg-primary_black  min-h-screen flex justify-center py-10'>
+    <div class="p-8 w-10/12 relative" >
+        <h2 class="text-gray-200 text-2xl font-medium">
+            Popular on Netflix
+        </h2>
+        <div class="flex justify-center  items-center min-w-full  movie_lis">
+            {% for x in da %}
+            <a href="{% url 'movie_details' movie_id=x.uuid %}">
+                <div class=" h-40 m-4  bg-blue-500 flex-shrink-0 rounded-md cursor-pointer w-40">
+                    <img src="{{x.image.url}}"  class="w-full h-full " alt="">
+                
+                </div>
+            </a>
+            {% endfor %}
+           
+            
+
+        
+        </div>
+    </div>
+</section>    
+
+
+
+
+
+{% endblock %}
+
+

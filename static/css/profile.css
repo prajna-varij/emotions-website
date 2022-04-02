@@ -1,0 +1,43 @@
+.user-info {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding-top: 20px;
+}
+
+.display-pic {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    float: left;
+    margin-right: 20px;
+}
+
+.user-name {
+    margin-left: 20px;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.href-url {
+    color: rgb(153, 153, 153);
+    text-decoration: none;
+}
+
+.href-url:hover {
+    text-decoration: line;
+}
+
+.user-description {
+    min-height: 100px;
+    padding-top: 20px;
+}
+
+.edit-profile {
+    position: absolute;
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 20px;
+}

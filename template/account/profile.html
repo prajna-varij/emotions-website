@@ -1,0 +1,20 @@
+{% extends 'homeapp/Mainhome.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+    <div class='user-info'>
+        <img class='display-pic' src='{{ user.profile.image.url }}'>
+        <p class='user-name'>User: {{ user.username }}</p>
+        <p class='user-desc'>{{ user.profile.description }}</p>
+        <br>
+        <br>
+        
+
+        <div class="form-group">
+            <small class="text-muted ml-3" >Edit Profile <a href="{% url 'edit' %}">Click Here</a></small>
+        </div>        
+    
+       
+    </div>
+{% endblock %}
